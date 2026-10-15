@@ -1,6 +1,6 @@
 FROM php:7.4-apache
 
-RUN apt-get update && apt-get install -y socat netcat net-tools
+RUN apt-get update && apt-get install -y socat && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /var/www/html
 
