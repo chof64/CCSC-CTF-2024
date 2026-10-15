@@ -10,7 +10,7 @@ All `ports:` in `docker-compose.yml` are bound to `0.0.0.0` so external users ca
 ## 1. Open firewall (Admin PowerShell, copy-paste)
 
 ```powershell
-New-NetFirewallRule -DisplayName "CCSC-CTF" -Direction Inbound -Action Allow -Protocol TCP -LocalPort 1337,1338,1339,1340,1341,1342,1343,1344,1345,13373,9745,9746,9747,8080,8083,3000,3001,3002,3003,3004,3005,3006,5001
+New-NetFirewallRule -DisplayName "CCSC-CTF" -Direction Inbound -Action Allow -Protocol TCP -LocalPort 1337,1338,1339,1340,1341,1342,1343,1344,1345,13373,9745,9746,9747,8080,8083,3000,3001,3002,3003,3004,3005,3006,5001,8000
 ```
 
 If you re-run and it errors "already exists", remove first:
