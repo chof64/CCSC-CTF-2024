@@ -3,7 +3,7 @@ services:
     image: ghcr.io/cybermouflons/ccsc2024/andromeda-cloud-storage:latest
     restart: always
     ports:
-      - "0.0.0.0:1337:1337"
+      - "0.0.0.0:51001:1337"
     build:
       context: ./crypto/andromeda-cloud-storage/setup
       dockerfile: Dockerfile
@@ -12,7 +12,7 @@ services:
     image: ghcr.io/cybermouflons/ccsc2024/andromeda-cloud-storage-v2:latest
     restart: always
     ports:
-      - "0.0.0.0:1338:1337"
+      - "0.0.0.0:51002:1337"
     build:
       context: ./crypto/andromeda-cloud-storage-v2/setup
       dockerfile: Dockerfile
@@ -21,7 +21,7 @@ services:
     image: ghcr.io/cybermouflons/ccsc2024/inverted-orable:latest
     restart: always
     ports:
-      - "0.0.0.0:13373:13373"
+      - "0.0.0.0:51003:13373"
     build:
       context: ./crypto/inverted-oracle/setup
       dockerfile: Dockerfile
@@ -32,7 +32,7 @@ services:
     tty: true
     stdin_open: true
     ports:
-      - "0.0.0.0:1339:1337"
+      - "0.0.0.0:51004:1337"
     build:
       context: ./misc/armored-up/setup
       dockerfile: Dockerfile
@@ -41,7 +41,7 @@ services:
     image: ghcr.io/cybermouflons/ccsc2024/superguesser:latest
     restart: always
     ports:
-      - "0.0.0.0:9745:9745"
+      - "0.0.0.0:51005:9745"
     build:
       context: ./misc/superguesser/setup
 
@@ -49,7 +49,7 @@ services:
     image: ghcr.io/cybermouflons/ccsc2024/superguesser:latest
     restart: always
     ports:
-      - "0.0.0.0:9746:9745"
+      - "0.0.0.0:51006:9745"
     build:
       context: ./misc/superguesser/setup
 
@@ -57,7 +57,7 @@ services:
     image: ghcr.io/cybermouflons/ccsc2024/superguesser:latest
     restart: always
     ports:
-      - "0.0.0.0:9747:9745"
+      - "0.0.0.0:51007:9745"
     build:
       context: ./misc/superguesser/setup
 
@@ -66,7 +66,7 @@ services:
     platform: linux/amd64
     restart: always
     ports:
-      - "0.0.0.0:1340:1337"
+      - "0.0.0.0:51008:1337"
     build:
       context: ./pwn/GOT-Override/setup
       dockerfile: Dockerfile
@@ -76,7 +76,7 @@ services:
     platform: linux/amd64
     restart: always
     ports:
-      - "0.0.0.0:1341:1337"
+      - "0.0.0.0:51009:1337"
     build:
       context: ./pwn/hijack/setup
       dockerfile: Dockerfile
@@ -92,7 +92,7 @@ services:
   #   tty: true
   #   stdin_open: true
   #   ports:
-  #     - "0.0.0.0:1342:1337"
+  #     - "0.0.0.0:51010:1337"
   #   build:
   #     context: ./pwn/infiltration/setup
   #     dockerfile: Dockerfile
@@ -103,7 +103,7 @@ services:
     tty: true
     stdin_open: true
     ports:
-      - "0.0.0.0:1343:1337"
+      - "0.0.0.0:51011:1337"
     build:
       context: ./pwn/model-scan/setup
       dockerfile: Dockerfile
@@ -115,7 +115,7 @@ services:
     tty: true
     stdin_open: true
     ports:
-      - "0.0.0.0:1344:1337"
+      - "0.0.0.0:51012:1337"
     build:
       context: ./pwn/spilled/setup
       dockerfile: Dockerfile
@@ -125,7 +125,7 @@ services:
     platform: linux/amd64
     restart: always
     ports:
-      - "0.0.0.0:8080:8080"
+      - "0.0.0.0:51013:8080"
     build:
       context: ./reverse/TLV/setup
       dockerfile: Dockerfile
@@ -135,7 +135,7 @@ services:
     platform: linux/amd64
     restart: always
     ports:
-      - "0.0.0.0:1345:1337"
+      - "0.0.0.0:51014:1337"
     build:
       context: ./reverse/license-ops/setup
       dockerfile: Dockerfile
@@ -144,7 +144,7 @@ services:
     image: ghcr.io/cybermouflons/ccsc2024/arcane-runes:latest
     restart: always
     ports:
-      - "0.0.0.0:3000:3000"
+      - "0.0.0.0:51015:3000"
     build:
       context: ./web/arcane-runes/setup
 
@@ -152,7 +152,7 @@ services:
     image: ghcr.io/cybermouflons/ccsc2024/cross-checked-report:latest
     restart: always
     ports:
-      - "0.0.0.0:5001:5000"
+      - "0.0.0.0:51016:5000"
     build:
       context: ./web/cross-checked-report/setup
       dockerfile: Dockerfile
@@ -161,7 +161,7 @@ services:
     image: ghcr.io/cybermouflons/ccsc2024/microbuns-backend-service:latest
     restart: always
     ports:
-      - "0.0.0.0:8083:8080"
+      - "0.0.0.0:51017:8080"
     build:
       context: ./web/microbuns/setup/backend-service
 
@@ -181,7 +181,7 @@ services:
     image: ghcr.io/cybermouflons/ccsc2024/portal:latest
     restart: always
     ports:
-      - "0.0.0.0:3004:3000"
+      - "0.0.0.0:51018:3000"
     build:
       context: ./web/portal/setup
       dockerfile: Dockerfile
@@ -190,7 +190,7 @@ services:
     image: ghcr.io/cybermouflons/ccsc2024/shodanql:latest
     restart: always
     ports:
-      - "0.0.0.0:3003:3003"
+      - "0.0.0.0:51019:3003"
     environment:
       admin_username: admin
       admin_password: Super_Secret_P@ssw0rd!@project-Echo_
@@ -202,7 +202,7 @@ services:
     image: ghcr.io/cybermouflons/ccsc2024/shodanql_revenge:latest
     restart: always
     ports:
-      - "0.0.0.0:3006:3003"
+      - "0.0.0.0:51020:3003"
     environment:
       admin_username: admin
       admin_password: Super_Secret_P@ssw0rd!@project-Echo_
@@ -214,7 +214,7 @@ services:
     image: ghcr.io/cybermouflons/ccsc2024/underground_watch_part_1:latest
     restart: always
     ports:
-      - "0.0.0.0:3001:80"
+      - "0.0.0.0:51021:80"
     build:
       context: ./web/underground_watch_part_1/setup
 
@@ -222,7 +222,7 @@ services:
     image: ghcr.io/cybermouflons/ccsc2024/underground_watch_part_2:latest
     restart: always
     ports:
-      - "0.0.0.0:3002:80"
+      - "0.0.0.0:51022:80"
     build:
       context: ./forensics/underground_watch_part_2/setup
 
@@ -230,9 +230,9 @@ services:
     image: ghcr.io/cybermouflons/ccsc2024/warriors_tech_shop:latest
     restart: always
     ports:
-      - "0.0.0.0:3005:3000"
+      - "0.0.0.0:51023:3000"
     environment:
-      host: localhost:3005
+      host: localhost:51023
       flag: CCSC{w3_f0rg3_4nd_r3b1nd_0ur_0wn_t00ls}
     build:
       context: ./web/warriors_tech_shop/setup
@@ -241,7 +241,7 @@ services:
     image: ctfd/ctfd:latest
     restart: always
     ports:
-      - "0.0.0.0:8000:8000"
+      - "0.0.0.0:51024:8000"
     environment:
       # TEMPORARY EVENT - hardcoded on purpose, not secret. No edits needed.
       SECRET_KEY: ccsc-kingston-temporary-not-secret
