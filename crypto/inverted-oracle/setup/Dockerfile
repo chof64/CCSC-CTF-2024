@@ -8,7 +8,7 @@ WORKDIR /chall
 COPY . .
 
 RUN pip install poetry
-RUN poetry install
+RUN poetry install --no-root
 
 EXPOSE 13373
 
