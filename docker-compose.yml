@@ -63,6 +63,7 @@ services:
 
   got-override:
     image: ghcr.io/cybermouflons/ccsc2024/got-override:latest
+    platform: linux/amd64
     restart: always
     ports:
       - "0.0.0.0:1340:1337"
@@ -72,6 +73,7 @@ services:
 
   hijack:
     image: ghcr.io/cybermouflons/ccsc2024/hijack:latest
+    platform: linux/amd64
     restart: always
     ports:
       - "0.0.0.0:1341:1337"
@@ -103,6 +105,7 @@ services:
 
   spilled:
     image: ghcr.io/cybermouflons/ccsc2024/spilled:latest
+    platform: linux/amd64
     restart: always
     tty: true
     stdin_open: true
@@ -114,6 +117,7 @@ services:
 
   tlv:
     image: ghcr.io/cybermouflons/ccsc2024/tlv:latest
+    platform: linux/amd64
     restart: always
     ports:
       - "0.0.0.0:8080:8080"
@@ -123,6 +127,7 @@ services:
 
   license-ops:
     image: ghcr.io/cybermouflons/ccsc2024/license-ops:latest
+    platform: linux/amd64
     restart: always
     ports:
       - "0.0.0.0:1345:1337"

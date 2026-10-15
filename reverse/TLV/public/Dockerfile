@@ -2,7 +2,7 @@
 FROM ubuntu
 
 RUN apt-get update && apt-get upgrade -y
-RUN apt-get install -y socat gcc-multilib
+RUN apt-get install -y socat
 
 # set workdir and transfer binary
 WORKDIR /root
