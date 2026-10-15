@@ -1,0 +1,223 @@
+services:
+  andromeda-v1:
+    image: ghcr.io/cybermouflons/ccsc2024/andromeda-cloud-storage:latest
+    restart: always
+    ports:
+      - 1337:1337
+    build:
+      context: ./crypto/andromeda-cloud-storage/setup
+      dockerfile: Dockerfile
+
+  andromeda-v2:
+    image: ghcr.io/cybermouflons/ccsc2024/andromeda-cloud-storage-v2:latest
+    restart: always
+    ports:
+      - 1338:1337
+    build:
+      context: ./crypto/andromeda-cloud-storage-v2/setup
+      dockerfile: Dockerfile
+
+  inverted-oracle:
+    image: ghcr.io/cybermouflons/ccsc2024/inverted-orable:latest
+    restart: always
+    ports:
+      - 13373:13373
+    build:
+      context: ./crypto/inverted-oracle/setup
+      dockerfile: Dockerfile
+
+  armored-up:
+    image: ghcr.io/cybermouflons/ccsc2024/armored-up:latest
+    restart: always
+    tty: true
+    stdin_open: true
+    ports:
+      - 1339:1337
+    build:
+      context: ./misc/armored-up/setup
+      dockerfile: Dockerfile
+
+  superguesser:
+    image: ghcr.io/cybermouflons/ccsc2024/superguesser:latest
+    restart: always
+    ports:
+      - 9745:9745
+    build:
+      context: ./misc/superguesser/setup
+
+  superguesser-2:
+    image: ghcr.io/cybermouflons/ccsc2024/superguesser:latest
+    restart: always
+    ports:
+      - 9746:9745
+    build:
+      context: ./misc/superguesser/setup
+
+  superguesser-3:
+    image: ghcr.io/cybermouflons/ccsc2024/superguesser:latest
+    restart: always
+    ports:
+      - 9747:9745
+    build:
+      context: ./misc/superguesser/setup
+
+  got-override:
+    image: ghcr.io/cybermouflons/ccsc2024/got-override:latest
+    restart: always
+    ports:
+      - 1340:1337
+    build:
+      context: ./pwn/GOT-Override/setup
+      dockerfile: Dockerfile
+
+  hijack:
+    image: ghcr.io/cybermouflons/ccsc2024/hijack:latest
+    restart: always
+    ports:
+      - 1341:1337
+    build:
+      context: ./pwn/hijack/setup
+      dockerfile: Dockerfile
+
+  infiltration:
+    image: ghcr.io/cybermouflons/ccsc2024/infiltration:latest
+    restart: always
+    tty: true
+    stdin_open: true
+    ports:
+      - 1342:1337
+    build:
+      context: ./pwn/infiltration/setup
+      dockerfile: Dockerfile
+
+  model-scan:
+    image: ghcr.io/cybermouflons/ccsc2024/model-scan:latest
+    restart: always
+    tty: true
+    stdin_open: true
+    ports:
+      - 1343:1337
+    build:
+      context: ./pwn/model-scan/setup
+      dockerfile: Dockerfile
+
+  spilled:
+    image: ghcr.io/cybermouflons/ccsc2024/spilled:latest
+    restart: always
+    tty: true
+    stdin_open: true
+    ports:
+      - 1344:1337
+    build:
+      context: ./pwn/spilled/setup
+      dockerfile: Dockerfile
+
+  tlv:
+    image: ghcr.io/cybermouflons/ccsc2024/tlv:latest
+    restart: always
+    ports:
+      - 8080:8080
+    build:
+      context: ./reverse/TLV/setup
+      dockerfile: Dockerfile
+
+  license-ops:
+    image: ghcr.io/cybermouflons/ccsc2024/license-ops:latest
+    restart: always
+    ports:
+      - 1345:1337
+    build:
+      context: ./reverse/license-ops/setup
+      dockerfile: Dockerfile
+
+  arcane-runes:
+    image: ghcr.io/cybermouflons/ccsc2024/arcane-runes:latest
+    restart: always
+    ports:
+      - 3000:3000
+    build:
+      context: ./web/arcane-runes/setup
+
+  cross-checked-report:
+    image: ghcr.io/cybermouflons/ccsc2024/cross-checked-report:latest
+    restart: always
+    ports:
+      - 5001:5000
+    build:
+      context: ./web/cross-checked-report/setup
+      dockerfile: Dockerfile
+
+  microbuns-backend:
+    image: ghcr.io/cybermouflons/ccsc2024/microbuns-backend-service:latest
+    restart: always
+    ports:
+      - 8083:8080
+    build:
+      context: ./web/microbuns/setup/backend-service
+
+  microbuns-users:
+    image: ghcr.io/cybermouflons/ccsc2024/microbuns-users-service:latest
+    restart: always
+    build:
+      context: ./web/microbuns/setup/users-service
+
+  microbuns-haiku:
+    image: ghcr.io/cybermouflons/ccsc2024/microbuns-haiku-service:latest
+    restart: always
+    build:
+      context: ./web/microbuns/setup/haiku-service
+
+  portal:
+    image: ghcr.io/cybermouflons/ccsc2024/portal:latest
+    restart: always
+    ports:
+      - 3004:3000
+    build:
+      context: ./web/portal/setup
+      dockerfile: Dockerfile
+
+  shodanql:
+    image: ghcr.io/cybermouflons/ccsc2024/shodanql:latest
+    ports:
+      - 3003:3003
+    environment:
+      admin_username: admin
+      admin_password: Super_Secret_P@ssw0rd!@project-Echo_
+      flag: CCSC{pwn1nG_w1th_SQL1_1nj3ct10n_s1nc3_1998}
+    build:
+      context: ./web/shodanql/setup
+
+  shodanql-revenge:
+    image: ghcr.io/cybermouflons/ccsc2024/shodanql_revenge:latest
+    ports:
+      - 3006:3003
+    environment:
+      admin_username: admin
+      admin_password: Super_Secret_P@ssw0rd!@project-Echo_
+      flag: CCSC{pwn1nG_w1th_SQL1_1nj3ct10n_s1nc3_1998_for_real_this_time}
+    build:
+      context: ./web/shodanql_revenge/setup
+
+  underground-watch-1:
+    image: ghcr.io/cybermouflons/ccsc2024/underground_watch_part_1:latest
+    ports:
+      - 3001:80
+    build:
+      context: ./web/underground_watch_part_1/setup
+
+  underground-watch-2:
+    image: ghcr.io/cybermouflons/ccsc2024/underground_watch_part_2:latest
+    ports:
+      - 3002:80
+    build:
+      context: ./forensics/underground_watch_part_2/setup
+
+  warriors-tech-shop:
+    image: ghcr.io/cybermouflons/ccsc2024/warriors_tech_shop:latest
+    ports:
+      - 3005:3000
+    environment:
+      host: localhost:3005
+      flag: CCSC{w3_f0rg3_4nd_r3b1nd_0ur_0wn_t00ls}
+    build:
+      context: ./web/warriors_tech_shop/setup
