@@ -226,3 +226,24 @@ services:
       flag: CCSC{w3_f0rg3_4nd_r3b1nd_0ur_0wn_t00ls}
     build:
       context: ./web/warriors_tech_shop/setup
+
+  ctfd:
+    image: ctfd/ctfd:latest
+    restart: always
+    ports:
+      - "0.0.0.0:8000:8000"
+    environment:
+      # TEMPORARY EVENT - hardcoded on purpose, not secret. No edits needed.
+      SECRET_KEY: ccsc-kingston-temporary-not-secret
+      DATABASE_URL: sqlite:////opt/CTFd/CTFd/uploads/ctfd.db
+      WORKERS: 1
+      UPLOAD_FOLDER: /opt/CTFd/CTFd/uploads
+      PRESET_ADMIN_NAME: admin
+      PRESET_ADMIN_EMAIL: admin@ccsc.local
+      PRESET_ADMIN_PASSWORD: ccsc-kingston-temp-admin!
+      PRESET_ADMIN_TOKEN: ccsc-kingston-temp-token-2024
+    volumes:
+      - ctfd-uploads:/opt/CTFd/CTFd/uploads
+
+volumes:
+  ctfd-uploads:
