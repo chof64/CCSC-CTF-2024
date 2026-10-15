@@ -81,16 +81,21 @@ services:
       context: ./pwn/hijack/setup
       dockerfile: Dockerfile
 
-  infiltration:
-    image: ghcr.io/cybermouflons/ccsc2024/infiltration:latest
-    restart: always
-    tty: true
-    stdin_open: true
-    ports:
-      - "0.0.0.0:1342:1337"
-    build:
-      context: ./pwn/infiltration/setup
-      dockerfile: Dockerfile
+  # infiltration: disabled for deploy — build requires Google Drive
+  # image.tar.gz via `gdown 1HqQfiKfTLs9Kci1-AGuCF5x2mhwWdirk` which now fails
+  # with "Cannot retrieve the public link" and blocks `docker compose build`
+  # for all services. Re-enable once the image is hosted somewhere durable
+  # (registry/CTFd upload/S3) instead of Drive.
+  # infiltration:
+  #   image: ghcr.io/cybermouflons/ccsc2024/infiltration:latest
+  #   restart: always
+  #   tty: true
+  #   stdin_open: true
+  #   ports:
+  #     - "0.0.0.0:1342:1337"
+  #   build:
+  #     context: ./pwn/infiltration/setup
+  #     dockerfile: Dockerfile
 
   model-scan:
     image: ghcr.io/cybermouflons/ccsc2024/model-scan:latest
